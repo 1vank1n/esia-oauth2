@@ -276,7 +276,7 @@ class EsiaAuth(object):
         :param str token: токен для декодирования
         :rtype: dict
         """
-        return jwt.decode(token, verify=False)
+        return jwt.decode(token, options={'verify_signature': False})
 
     @staticmethod
     def _get_user_id(payload):
